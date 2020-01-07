@@ -1,6 +1,6 @@
 # js中null、undefined浅谈
 大多数计算机语言，有且只有一个表示“无”的值，比如，C语言的NULL，Java语言的null，Python语言的None，Ruby语言的nil。
-*  为啥JavaScript语言居然有两个表示“无”的值：undefined和null  *
+    为啥JavaScript语言居然有两个表示“无”的值：undefined和null
 
 ### 历史原因
 1995年JavaScript诞生时，最初像Java一样，只设置了null作为表示“无”的值。  
@@ -51,7 +51,36 @@ undefined 是基本数据类型之一，值仅有一个，即为undefined。表�
     2. 调用函数时，应该提供的参数没有提供，该参数就是undefined。
     3. 对象没有赋值的属性，该属性的值为 undefined。
     4. 函数没有返回值，默认返回 undefined。
-    
+    ``` bash
+    var i;
+    # i undefined
+
+    function f(x) {console.log(x)}
+    f()
+    # x undefined
+
+    var o = new Object();
+    # o.p undefined
+
+    var x = f();
+    # x undefined
+    ```
+
+3. 如何检测undefined
+``` bash
+if(typeof abc == 'undefined')
+
+或者
+if(abc === undefined)
+```
+ps: typeof有两种用法: typeof(x) 或者 typeof x
+
+4. 如何检测null
+``` bash
+if(!abc && typeof abc != 'undefined' && abc !== 0)
+
+if (abc === null)
+```
 
 ### 参考文档
 1. [null 和 undefined 的区别](https://www.cnblogs.com/haishen/p/10718715.html)
