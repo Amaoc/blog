@@ -17,18 +17,18 @@
 JavaScript的最初版本时这样区分的：
 1. null 是一个表示“无”的对象，转为数值时为0；
 2. undefined 是一个表示“无”的原始值，转为数值是为NAN；
-``` bash
+``` js
 Number(null)
-# 0
+// # 0
 
 5 + null
-# 5
+// # 5
 
 Number(undefined)
-# NAN
+// # NAN
 
 5 + undefined
-# NAN
+// # NAN
 ```
 
 ### 目前的用法
@@ -38,7 +38,7 @@ null 是基本数据类型之一，值仅有一个，即为null。表示“空�
 典型用法：
     1. 作为函数的参数，表示该函数的参数不是对象；
     2. 作为对象的原型链的终点。
-    ``` bash
+    ``` js
     Object.getPrototypeOf(Object.prototype)  // null
     typeof null      // Object
     ```
@@ -51,32 +51,32 @@ undefined 是基本数据类型之一，值仅有一个，即为undefined。表�
     2. 调用函数时，应该提供的参数没有提供，该参数就是undefined。
     3. 对象没有赋值的属性，该属性的值为 undefined。
     4. 函数没有返回值，默认返回 undefined。
-    ``` bash
+    ``` js
     var i;
-    # i undefined
+    // i undefined
 
     function f(x) {console.log(x)}
     f()
-    # x undefined
+    // x undefined
 
     var o = new Object();
-    # o.p undefined
+    // o.p undefined
 
     var x = f();
-    # x undefined
+    // x undefined
     ```
 
 3. 如何检测undefined
-``` bash
+``` js
 if(typeof abc == 'undefined')
 
-或者
+// 或者
 if(abc === undefined)
 ```
 ps: typeof有两种用法: typeof(x) 或者 typeof x
 
 4. 如何检测null
-``` bash
+``` js
 if(!abc && typeof abc != 'undefined' && abc !== 0)
 
 if (abc === null)
